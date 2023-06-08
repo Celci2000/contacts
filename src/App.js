@@ -1,5 +1,6 @@
 import React , {useState} from 'react'
 import AddContact from './AddContact.js'
+import { AiFillDelete } from 'react-icons/ai';
 import ContactList from "./ContactList.js"
 function App() {
 const [contacts , setContacts ]= useState([{id:"1234",name:"celia", email:"csm@dot/.com"},{id:"5678",name:"loria" , email:"lorial@dot/.com"}])
@@ -12,6 +13,15 @@ const dltContact=(id)=>{
 const updatedCons=contacts.filter((item)=> item.name!==id);
 console.log(updatedCons);
 setContacts(updatedCons);
+return(<div>{updatedCons.map((e) => (<div  class=" mb-4 border-b-2 border-gray-500 text-black font-normal font-serif  "> 
+<p class="text-capitalize " >{e.name}  </p>
+<button> <AiFillDelete /></button>
+<p class="text-capitalize">{e.email}</p>
+
+
+</div>)
+)}</div>)
+
 
 }
 

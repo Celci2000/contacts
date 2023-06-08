@@ -10,13 +10,11 @@ class AddContact extends React.Component {
     
     add=(e)=>{
     e.preventDefault();
-    if(this.state.name===""&&this.state.email===""){
+    if(this.state.name===" "&&this.state.email===" "){
       
         alert("no contacts to add");
         console.log("alert");
-
-
-    }
+     }
     else{
         this.props.addContactHandler(this.state)
         console.log(this.state)
